@@ -1,4 +1,5 @@
 {
   "name": "Roomba Map",
-  "render_readme": true
+  "integration": true,
+  "homeassistant": "2024.1.0"
 }
