@@ -14,7 +14,7 @@ class RoombaClient:
         if self._roomba:
             return
         try:
-            # En roombapy >= 2.0 se utiliza RoombaClient en lugar de Roomba
+            # Se instancia usando RoombaClient en vez de Roomba de roombapy >= 2.0
             self._roomba = ExternalRoombaClient(address=self.host, blid=self._username, password=self._password)
             await self._roomba.connect()
             _LOGGER.info("Connected to Roomba %s via RoombaClient", self.host)
@@ -25,7 +25,7 @@ class RoombaClient:
     async def async_fetch_all(self):
         await self.async_connect()
         
-        # En las nuevas versiones la propiedad para obtener el estado maestro es .master_state
+        # En roombapy >= 2.0 el estado maestro se obtiene desde master_state o state
         state = {}
         if hasattr(self._roomba, "master_state"):
             state = self._roomba.master_state
