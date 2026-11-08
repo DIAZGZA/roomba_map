@@ -1,6 +1,4 @@
 {
-  "name": "roomba map",
-  "render_readme": true,
-  "country": "ES",
-  "homeassistant": "2025.11.0",
+  "name": "Roomba Map",
+  "render_readme": true
 }
